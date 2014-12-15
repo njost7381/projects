@@ -1,5 +1,5 @@
 #this file contains all the functions required for guess who
-import picamera,time
+import picamera,time,json
 #Gets a picture of the user
 
 def getPicture(name) :
@@ -18,8 +18,8 @@ def getPicture(name) :
             if correct.lower () =="y" :
                 check = True
             response = ""
-            while not(response in["y"]):
-                respone = input
+            #while not(response in["y"]):
+              #  respone = input
                 
     except picamera.exc.PiCameraMMALError:
         print("camera  not detected, please reconnect and restart")
@@ -47,6 +47,23 @@ def getCharProfile() :
         eyecolour = input("what is your eye colour?")
     return[name,hair,glasses,gender,hat,eyecolour]
 
+
+def load():
+    try:
+        with open ("people",mode='r') as file:
+            people = json.load(file)
+    except IOError:
+            print("failed")
+            people = []
+    return people
+
+def store():
+    person = getCharProfile()
+    people.append(person)
+    with open ("people",mode='w') as file:
+        json.dump(people,file)
+people = load()
+store()
                     
 
 
