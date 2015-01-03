@@ -1,5 +1,6 @@
 import time,mcpi.minecraft as minecraft # imports the time, mcpi.minecraft as minecraft libraries 
 mc = minecraft.Minecraft.create()
+#this project is my space invader which changes colour and does a ripple effect to do this
 
 
 def space(x,y,z): # defines the space function with parameters xyz
