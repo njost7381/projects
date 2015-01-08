@@ -36,6 +36,9 @@ def getCharProfile() :
     glasses = ""
     while not(glasses in["yes","no","y","n"]):
         glasses = input("do you have glasses?")
+    facialhair = ""
+    while not(facialhair in["yes","no","y","n"]):
+        facialhair = input("do you have facial hair?")
     gender = ""
     while not(gender in["male","female","m","f","other"]):
         gender = input("Are you male, female or other?")
@@ -45,7 +48,7 @@ def getCharProfile() :
     eyecolour =""
     while not(eyecolour in["blue","green","red","brown"]):
         eyecolour = input("what is your eye colour?")
-    return[name,hair,glasses,gender,hat,eyecolour]
+    return[name,hair,glasses,facialhair,gender,hat,eyecolour]
 
 
 def load():

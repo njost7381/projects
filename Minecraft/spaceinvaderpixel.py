@@ -1,9 +1,10 @@
-import time,mcpi.minecraft as minecraft
+import time,mcpi.minecraft as minecraft # imports the time, mcpi.minecraft as minecraft libraries 
 mc = minecraft.Minecraft.create()
+#this project is my space invader which changes colour and does a ripple effect to do this
 
 
-def space(x,y,z):
-	for block in(3,9):
+def space(x,y,z): # defines the space function with parameters xyz
+	for block in(3,9):# for block 3 to 9 set block, (3-9) y+8 , z, and block 22. 
         	mc.setBlock(block,y+8,z,22)
 	for block in(4,8):
         	mc.setBlock(block,y+7,z,22)
@@ -36,7 +37,7 @@ def space2(x,y,z):
                 mc.setBlock(block,y+2,z,24)
  	for block in(4,5,7,8):
                 mc.setBlock(block,y+1,z,24)
-while True:
+while True: #do this forever
 	space (0,0,0)
 	time.sleep(1)
 	space2(0,0,0)
